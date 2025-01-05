@@ -1,4 +1,4 @@
-FROM alpine:3.21
+FROM docker.io/library/alpine:3.21
 
 # Install OpenSSH server and Gitolite
 # Unlock the automatically-created git user
