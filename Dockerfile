@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3.21
 
 # Install OpenSSH server and Gitolite
 # Unlock the automatically-created git user
@@ -21,3 +21,4 @@ EXPOSE 22
 
 # Default command is to run the SSH server
 CMD ["sshd"]
+
