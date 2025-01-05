@@ -11,10 +11,6 @@ if [ "${1}" = 'sshd' ]; then
     [ -f $keyfile ] || ssh-keygen -q -N '' -f $keyfile -t $algorithm
     grep -q "HostKey $keyfile" /etc/ssh/sshd_config || echo "HostKey $keyfile" >> /etc/ssh/sshd_config
   done
-  # Disable unwanted authentications
-  perl -i -pe 's/^#?((?!Kerberos|GSSAPI)\w*Authentication)\s.*/\1 no/; s/^(PubkeyAuthentication) no/\1 yes/' /etc/ssh/sshd_config
-  # Disable sftp subsystem
-  perl -i -pe 's/^(Subsystem\ssftp\s)/#\1/' /etc/ssh/sshd_config
 fi
 
 # Fix permissions at every startup

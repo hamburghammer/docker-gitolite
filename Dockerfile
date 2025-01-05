@@ -6,6 +6,8 @@ RUN set -x \
  && apk add --no-cache gitolite openssh \
  && passwd -u git
 
+COPY sshd_config /etc/ssh/sshd_config
+
 # Volume used to store SSH host keys, generated on first run
 VOLUME /etc/ssh/keys
 
@@ -16,8 +18,8 @@ VOLUME /var/lib/git
 COPY docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-# Expose port 22 to access SSH
-EXPOSE 22
+# Expose port 2222 to access SSH
+EXPOSE 2222
 
 # Default command is to run the SSH server
 CMD ["sshd"]
