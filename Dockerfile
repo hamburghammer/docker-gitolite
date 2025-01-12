@@ -6,6 +6,7 @@ RUN set -x \
  && apk add --no-cache gitolite openssh \
  && passwd -u git
 
+COPY gitconfig /etc/gitconfig
 COPY sshd_config /etc/ssh/sshd_config
 
 # Volume used to store SSH host keys, generated on first run
