@@ -57,13 +57,13 @@ PermitEmptyPasswords no
 ChallengeResponseAuthentication no
 
 # Kerberos options
-KerberosAuthentication no
+#KerberosAuthentication no
 #KerberosOrLocalPasswd yes
 #KerberosTicketCleanup yes
 #KerberosGetAFSToken no
 
 # GSSAPI options
-GSSAPIAuthentication no
+#GSSAPIAuthentication no
 #GSSAPICleanupCredentials yes
 #GSSAPIStrictAcceptorCheck yes
 #GSSAPIKeyExchange no
@@ -87,7 +87,7 @@ X11Forwarding no
 #X11UseLocalhost yes
 PermitTTY no
 PrintMotd no
-PrintLastLog no
+#PrintLastLog no
 #TCPKeepAlive yes
 #UseLogin no
 #PermitUserEnvironment no
